@@ -1,29 +1,53 @@
 package com.zignut.model;
 
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
 import java.util.ArrayList;
 
 /**
  * Created by Lenovo on 18-03-2018.
  */
+@Entity(tableName = "address")
 
 public class AddressModel {
 
-    private String id;
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+
+    @ColumnInfo(name = "tripNmae")
     private String tripNmae;
+
+    @ColumnInfo(name = "tripSrcAddress")
     private String tripSrcAddress;
+
+    @ColumnInfo(name = "tripDestAddress")
     private String tripDestAddress;
+
+    @ColumnInfo(name = "tripStartDate")
     private String tripStartDate;
+
+    @ColumnInfo(name = "tripEndDate")
     private String tripEndDate;
+
+    @ColumnInfo(name = "tripSrcLat")
     private String tripSrcLat;
+
+    @ColumnInfo(name = "tripSrclong")
     private String tripSrclong;
+
+    @ColumnInfo(name = "tripDestLat")
     private String tripDestLat;
+
+    @ColumnInfo(name = "tripDestlong")
     private String tripDestlong;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -107,7 +131,7 @@ public class AddressModel {
         for (int i = 0; i <= 10; i++) {
 
             AddressModel addressModel = new AddressModel();
-            addressModel.setId(String.valueOf(i));
+            addressModel.setId(i);
             addressModel.setTripNmae("Abu with freind");
             addressModel.setTripSrcAddress("Ahmedabad ,paldi");
             addressModel.setTripDestAddress("Abu raod");

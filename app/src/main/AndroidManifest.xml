@@ -40,7 +40,11 @@
 
         <activity
             android:name=".activity.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
+
+        <service
+            android:name=".jobscheduler.JobSchedulerPeriodic"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
     </application>
 
 </manifest>
